@@ -1,0 +1,22 @@
+.navbar {
+    background-color: rgb(255, 255, 255)!important;
+    min-height: 80px;
+}
+.navbar-brand {
+    font-size: 24px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-link {
+    color: black!important;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.nav-link:hover {
+    text-decoration: underline;
+}
+#hero {
+    height: 80vh;
+}
+#hero-title {
+    height: 1.5em;
+}
