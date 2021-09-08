@@ -20,3 +20,7 @@
 #hero-title {
     height: 1.5em;
 }
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
