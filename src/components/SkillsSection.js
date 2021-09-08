@@ -1,7 +1,6 @@
 import React from "react";
 
 function SkillsSection() {
-  const styles = {width: '80'};
   return (
     <div className="container px-4 py-5 my-5 w-100" id="hero">
       <h1 className="display-5 fw-bold mb-5">My Skills</h1>

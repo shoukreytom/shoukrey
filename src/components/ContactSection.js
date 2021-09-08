@@ -46,17 +46,41 @@ function ContactSection() {
           </form>
         </div>
         <div className="col d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a href="https://web.facebook.com/shoukreytom/" target="_blank">
-            <img src="https://img.icons8.com/fluency/96/000000/facebook.png" />
+          <a
+            href="https://web.facebook.com/shoukreytom/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://img.icons8.com/fluency/96/000000/facebook.png"
+              alt="Facebook"
+            />
           </a>
-          <a href="https://twitter.com/shoukreytom/" target="_blank">
-            <img src="https://img.icons8.com/color/96/000000/twitter--v1.png" />
+          <a
+            href="https://twitter.com/shoukreytom/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://img.icons8.com/color/96/000000/twitter--v1.png"
+              alt="Twitter"
+            />
           </a>
-          <a href="https://linkedin.com/in/shoukreytom/" target="_blank">
-            <img src="https://img.icons8.com/fluency/96/000000/linkedin.png" />
+          <a
+            href="https://linkedin.com/in/shoukreytom/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://img.icons8.com/fluency/96/000000/linkedin.png"
+              alt="LinkedIn"
+            />
           </a>
-          <a href="https://t.me/shoukreytom" target="_blank">
-            <img src="https://img.icons8.com/color-glass/96/000000/telegram-app.png" />
+          <a href="https://t.me/shoukreytom" target="_blank" rel="noreferrer">
+            <img
+              src="https://img.icons8.com/color-glass/96/000000/telegram-app.png"
+              alt="Telegram"
+            />
           </a>
         </div>
       </div>
