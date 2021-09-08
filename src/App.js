@@ -6,6 +6,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import PortfolioDetails from './pages/PortfolioDetails';
 
 
 function App() {
@@ -21,9 +22,10 @@ function App() {
 				<Route path="/skills">
 					<Skills />
 				</Route>
-				<Route path="/work">
+				<Route exact path="/work">
 					<Work />
 				</Route>
+				<Route exact path="/work/:id" component={PortfolioDetails} />
 				<Route path="/contact">
 					<Contact />
 				</Route>

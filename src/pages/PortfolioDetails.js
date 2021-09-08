@@ -1,24 +1,27 @@
 import React from "react";
-import Portfolio from "./Portfolio";
+import Header from "../components/Header";
 
-class WorkSection extends React.Component {
+
+class PortfolioDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      item: undefined,
     };
   }
 
   componentDidMount() {
-    fetch("https://shoukrey.herokuapp.com/api/portfolio/")
-      .then(res => res.json())
+    let id = this.props.match.params.id;
+    const url = `https://shoukrey.herokuapp.com/api/portfolio/${id}/`;
+    fetch(url)
+      .then((res) => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result
+            item: result,
           });
         },
         // Note: it's important to handle errors here
@@ -27,32 +30,31 @@ class WorkSection extends React.Component {
         (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           });
         }
-      )
+      );
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, item } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className="container px-4 py-5 my-5 w-100">
-          <h1 className="display-5 fw-bold mb-5">My Work</h1>
-          <div className="row justify-content-center">
-            {items.map(item => (
-              <Portfolio key={item.id} portfolio={item}/>
-            ))}
+        <div>
+          <Header />
+          <div className="container px-4 py-5 my-5 w-100">
+            <img className="img-fluid" src={item.image} alt={item.title}/>
+            <h1 className="display-5 fw-bold">{item.title}</h1>
+            <p className="lead ps-4">{item.description}</p>
           </div>
         </div>
       );
     }
   }
-
 }
 
-export default WorkSection;
+export default PortfolioDetails;
