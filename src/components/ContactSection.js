@@ -1,4 +1,40 @@
 import React from "react";
+import $ from "jquery";
+
+function sendMessage(event) {
+  event.preventDefault();
+  const loadingSpinner = document.getElementById("spinner");
+  const messageBar = document.getElementById("msg-bar");
+  messageBar.classList.add("hide-msg-bar");   // hides message bar
+  loadingSpinner.classList.remove("hide-spinner");  // shows loading spinner
+  const sendBtn = document.getElementById("send-btn");
+  sendBtn.classList.add("disabled");  // disable send Button
+  const name = $("#name").val();
+  const email = $("#email").val();
+  const subject = $("#subject").val();
+  const message = $("#message").val();
+  if(name && email && subject && message) {
+    $.ajax({
+      url: "https://shoukrey.herokuapp.com/api/portfolio/email/",
+      type: "post",
+      data: {name: name, email: email, subject: subject, message:message},
+      success: function(result) {
+        loadingSpinner.classList.add("hide-spinner");   // hides loading spinner
+        messageBar.classList.remove("hide-msg-bar");    // shows message bar
+        messageBar.innerText = result.message;
+        sendBtn.classList.remove("disabled");   // enable send button
+      },
+      error: function(result) {
+        loadingSpinner.classList.add("hide-spinner");   // hides loading spinner
+        messageBar.classList.remove("hide-msg-bar");    // shows message bar
+        messageBar.classList.remove("alert-success");
+        messageBar.classList.add("alert-danger");
+        messageBar.innerText = "failed to send your email!! please try again.";
+        sendBtn.classList.remove("disabled"); // enable send button
+      }
+    })
+  }
+}
 
 function ContactSection() {
   return (
@@ -42,9 +78,29 @@ function ContactSection() {
                 required
               ></textarea>
             </div>
-            <button className="btn btn-success">Send message</button>
+            {/* Loading Spinner */}
+            <div className="text-center py-4 hide-spinner" id="spinner">
+              <div
+                className="spinner-border text-success"
+                style={{ width: "3rem", height: "3rem"}}
+                role="status"
+              >
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            {/* END Loading Spinner */}
+
+            {/* Response Message */}
+            <div className="text-center py-4">
+              <div className="alert alert-success hide-msg-bar" id="msg-bar"></div>
+            </div>
+            {/* END Response Message */}
+
+            <button id="send-btn" className="btn btn-success mt-2" onClick={sendMessage}>Send message</button>
           </form>
         </div>
+
+        {/* Social Links */}
         <div className="col d-grid gap-2 d-sm-flex justify-content-sm-center">
           <a
             href="https://web.facebook.com/shoukreytom/"

@@ -24,3 +24,9 @@
     cursor: pointer;
     transform: scale(1.2);
 }
+.hide-spinner {
+    display: none;
+}
+.hide-msg-bar {
+    display: none;
+}
