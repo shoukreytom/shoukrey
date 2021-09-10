@@ -15,9 +15,9 @@ function Hero() {
             (Django) and one of the most used programming languages (Python).
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" className="btn btn-primary btn-lg px-4">
+            <a href="https://linkedin.com/in/shoukreytom/" className="btn btn-primary btn-lg px-4">
               Hire me
-            </button>
+            </a>
           </div>
         </div>
       </div>
