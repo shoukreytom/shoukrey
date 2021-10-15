@@ -102,16 +102,16 @@ function ContactSection() {
 
         {/* Social Links */}
         <div className="col d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a
-            href="https://web.facebook.com/shoukreytom/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="https://img.icons8.com/fluency/96/000000/facebook.png"
-              alt="Facebook"
-            />
-          </a>
+//           <a
+//             href="https://web.facebook.com/shoukreytom/"
+//             target="_blank"
+//             rel="noreferrer"
+//           >
+//             <img
+//               src="https://img.icons8.com/fluency/96/000000/facebook.png"
+//               alt="Facebook"
+//             />
+//           </a>
           <a
             href="https://twitter.com/shoukreytom/"
             target="_blank"
